@@ -107,8 +107,8 @@ class ImportTranslationsCommand extends Command
             'language_id' => $language->id,
         ]);
 
-        // syncTranslations overwrite existing translations during import
-        //$this->syncTranslations($translation, $language->code);
+
+        $this->syncTranslations($translation, $language->code);
 
         return $translation;
     }
@@ -124,33 +124,33 @@ class ImportTranslationsCommand extends Command
         if ($locale === config('translations.source_language')) {
             return;
         }
-
-        $this->syncMissingTranslations($translation, $locale);
+        // syncMissingTranslations overwrite existing translations during import
+        //$this->syncMissingTranslations($translation, $locale);
     }
 
-    public function syncMissingTranslations(Translation $source, string $locale): void
-    {
-        $language = Language::where('code', $locale)->first();
+    // public function syncMissingTranslations(Translation $source, string $locale): void
+    // {
+    //     $language = Language::where('code', $locale)->first();
 
-        $translation = Translation::firstOrCreate([
-            'language_id' => $language->id,
-            'source' => false,
-        ]);
+    //     $translation = Translation::firstOrCreate([
+    //         'language_id' => $language->id,
+    //         'source' => false,
+    //     ]);
 
-        $source->load('phrases.translation', 'phrases.file');
+    //     $source->load('phrases.translation', 'phrases.file');
 
-        $source->phrases->each(function ($phrase) use ($translation, $locale) {
-            if (! $translation->phrases()->where('key', $phrase->key)->where('group', $phrase->group)->first()) {
-                $fileName = $phrase->file->name . '.' . $phrase->file->extension;
+    //     $source->phrases->each(function ($phrase) use ($translation, $locale) {
+    //         if (! $translation->phrases()->where('key', $phrase->key)->where('group', $phrase->group)->first()) {
+    //             $fileName = $phrase->file->name . '.' . $phrase->file->extension;
 
-                if ($phrase->file->name === config('translations.source_language')) {
-                    $fileName = Str::replaceStart(config('translations.source_language') . '.', "{$locale}.", $fileName);
-                } else {
-                    $fileName = Str::replaceStart(config('translations.source_language') . '/', "{$locale}/", $fileName);
-                }
+    //             if ($phrase->file->name === config('translations.source_language')) {
+    //                 $fileName = Str::replaceStart(config('translations.source_language') . '.', "{$locale}.", $fileName);
+    //             } else {
+    //                 $fileName = Str::replaceStart(config('translations.source_language') . '/', "{$locale}/", $fileName);
+    //             }
 
-                SyncPhrasesAction::execute($phrase->translation, $phrase->key, '', $locale, $fileName);
-            }
-        });
-    }
+    //             SyncPhrasesAction::execute($phrase->translation, $phrase->key, '', $locale, $fileName);
+    //         }
+    //     });
+    // }
 }
