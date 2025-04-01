@@ -83,7 +83,7 @@ class PhraseController extends BaseController
 
         //Fix Import null source
         if ($phrase->phrase_id === null) {
-            $phrase->phrase_id = Phrase::where('group', 'en')->where('key', $phrase->key)->first()->id;
+            $phrase->phrase_id = Phrase::where('group', config('translations.source_language'))->where('key', $phrase->key)->first()->id;
             $phrase->save();
             $phrase->refresh();
         }

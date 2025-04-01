@@ -53,6 +53,20 @@ class ImportTranslationsCommand extends Command
         $this->withProgressBar($this->manager->getLocales(), function ($locale) use ($translation) {
             $this->syncTranslations($translation, $locale);
         });
+
+        $this->info('Fix transalations without source...' . PHP_EOL);
+
+        //Fix transalations without source
+        $sourcePhrases = Phrase::where('group', config('translations.source_language'))->get();
+        $phrases = Phrase::where('group', '!=', config('translations.source_language'))->where('phrase_id', null)->get();
+        foreach ($phrases as $phrase) {
+            $phrase_id = $sourcePhrases->where('group', config('translations.source_language'))->where('key', $phrase->key)->first();
+
+            if ($phrase_id != null) {
+                $phrase->phrase_id = $phrase_id->id;
+                $phrase->save();
+            }
+        }
     }
 
     protected function importLanguages(): void
