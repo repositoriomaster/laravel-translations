@@ -124,6 +124,7 @@ class ImportTranslationsCommand extends Command
         if ($locale === config('translations.source_language')) {
             return;
         }
+
         // syncMissingTranslations overwrite existing translations during import
         //$this->syncMissingTranslations($translation, $locale);
     }
