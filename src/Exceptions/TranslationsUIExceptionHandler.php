@@ -1,6 +1,6 @@
 <?php
 
-namespace Outhebox\TranslationsUI\Exceptions;
+namespace RepositorioMaster\TranslationsUI\Exceptions;
 
 use App\Exceptions\Handler;
 use Illuminate\Auth\AuthenticationException;

@@ -1,11 +1,11 @@
 <?php
 
-namespace Outhebox\TranslationsUI\Console\Commands;
+namespace RepositorioMaster\TranslationsUI\Console\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Hash;
-use Outhebox\TranslationsUI\Enums\RoleEnum;
-use Outhebox\TranslationsUI\Models\Contributor;
+use RepositorioMaster\TranslationsUI\Enums\RoleEnum;
+use RepositorioMaster\TranslationsUI\Models\Contributor;
 use Symfony\Component\Console\Command\Command as CommandAlias;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -41,7 +41,7 @@ class ContributorCommand extends Command
                 label: 'Email associated with the contributor',
                 placeholder: 'E.g. example@domain.test',
                 required: 'The email of the contributor is required.',
-                validate: fn (string $value) => match (true) {
+                validate: fn(string $value) => match (true) {
                     ! filter_var($value, FILTER_VALIDATE_EMAIL) => 'The email address must be valid.',
                     Contributor::where('email', $value)->count() > 0 => 'A contributor with this email already exists',
                     default => null
@@ -66,7 +66,7 @@ class ContributorCommand extends Command
             $input->setArgument('password', password(
                 label: 'What is your password?',
                 placeholder: 'E.g. password@$123',
-                validate: fn (string $value) => match (true) {
+                validate: fn(string $value) => match (true) {
                     strlen($value) < 8 => 'The password must be at least 8 characters.',
                     default => null
                 },
@@ -83,7 +83,7 @@ class ContributorCommand extends Command
         $password = $input->getArgument('password');
 
         $contributor = spin(
-            fn () => Contributor::create([
+            fn() => Contributor::create([
                 'name' => $name,
                 'email' => $email,
                 'role' => RoleEnum::fromLabel($role),
@@ -108,7 +108,7 @@ class ContributorCommand extends Command
             ],
         ]);
 
-        $this->info(PHP_EOL.'First things first, login at <info>'.route('ltu.login').'</info> and update your credentials.');
+        $this->info(PHP_EOL . 'First things first, login at <info>' . route('ltu.login') . '</info> and update your credentials.');
 
         return Command::SUCCESS;
     }

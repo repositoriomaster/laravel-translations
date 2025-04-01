@@ -1,6 +1,6 @@
 <?php
 
-namespace Outhebox\TranslationsUI\Tests;
+namespace RepositorioMaster\TranslationsUI\Tests;
 
 use Illuminate\Contracts\Console\Kernel;
 use Illuminate\Database\Eloquent\Factories\Factory;
@@ -10,9 +10,9 @@ use Illuminate\Foundation\Testing\RefreshDatabaseState;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Gate;
 use Orchestra\Testbench\TestCase as Orchestra;
-use Outhebox\TranslationsUI\Enums\RoleEnum;
-use Outhebox\TranslationsUI\Models\Contributor;
-use Outhebox\TranslationsUI\TranslationsUIServiceProvider;
+use RepositorioMaster\TranslationsUI\Enums\RoleEnum;
+use RepositorioMaster\TranslationsUI\Models\Contributor;
+use RepositorioMaster\TranslationsUI\TranslationsUIServiceProvider;
 
 class TestCase extends Orchestra
 {
@@ -28,10 +28,10 @@ class TestCase extends Orchestra
 
         Cache::clear();
 
-        Gate::define('viewTranslationsUI', fn () => true);
+        Gate::define('viewTranslationsUI', fn() => true);
 
         Factory::guessFactoryNamesUsing(
-            fn (string $modelName) => 'Outhebox\\TranslationsUI\\Database\\Factories\\'.class_basename($modelName).'Factory'
+            fn(string $modelName) => 'RepositorioMaster\\TranslationsUI\\Database\\Factories\\' . class_basename($modelName) . 'Factory'
         );
 
         $this->owner = Contributor::factory([
@@ -61,25 +61,25 @@ class TestCase extends Orchestra
     {
         config()->set('inertia.testing.ensure_pages_exist', false);
 
-        $migration = include __DIR__.'/../database/migrations/create_languages_table.php';
+        $migration = include __DIR__ . '/../database/migrations/create_languages_table.php';
         $migration->up();
 
-        $migration = include __DIR__.'/../database/migrations/create_translations_table.php';
+        $migration = include __DIR__ . '/../database/migrations/create_translations_table.php';
         $migration->up();
 
-        $migration = include __DIR__.'/../database/migrations/create_translation_files_table.php';
+        $migration = include __DIR__ . '/../database/migrations/create_translation_files_table.php';
         $migration->up();
 
-        $migration = include __DIR__.'/../database/migrations/create_phrases_table.php';
+        $migration = include __DIR__ . '/../database/migrations/create_phrases_table.php';
         $migration->up();
 
-        $migration = include __DIR__.'/../database/migrations/create_contributors_table.php';
+        $migration = include __DIR__ . '/../database/migrations/create_contributors_table.php';
         $migration->up();
 
-        $migration = include __DIR__.'/../database/migrations/create_invites_table.php';
+        $migration = include __DIR__ . '/../database/migrations/create_invites_table.php';
         $migration->up();
 
-        $migration = include __DIR__.'/../database/migrations/add_is_root_to_translation_files_table.php';
+        $migration = include __DIR__ . '/../database/migrations/add_is_root_to_translation_files_table.php';
         $migration->up();
     }
 

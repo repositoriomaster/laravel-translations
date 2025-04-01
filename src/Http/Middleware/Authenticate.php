@@ -1,6 +1,6 @@
 <?php
 
-namespace Outhebox\TranslationsUI\Http\Middleware;
+namespace RepositorioMaster\TranslationsUI\Http\Middleware;
 
 use Closure;
 use Illuminate\Auth\AuthenticationException;
@@ -25,7 +25,9 @@ class Authenticate
             $this->auth->shouldUse('translations');
         } else {
             throw new AuthenticationException(
-                'Unauthenticated.', ['translations'], route('ltu.login')
+                'Unauthenticated.',
+                ['translations'],
+                route('ltu.login')
             );
         }
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Outhebox\TranslationsUI\Http\Controllers;
+namespace RepositorioMaster\TranslationsUI\Http\Controllers;
 
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -9,13 +9,13 @@ use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
 use Inertia\Inertia;
 use Inertia\Response;
-use Outhebox\TranslationsUI\Enums\RoleEnum;
-use Outhebox\TranslationsUI\Http\Resources\ContributorResource;
-use Outhebox\TranslationsUI\Http\Resources\InviteResource;
-use Outhebox\TranslationsUI\Mail\InviteCreated;
-use Outhebox\TranslationsUI\Modal;
-use Outhebox\TranslationsUI\Models\Contributor;
-use Outhebox\TranslationsUI\Models\Invite;
+use RepositorioMaster\TranslationsUI\Enums\RoleEnum;
+use RepositorioMaster\TranslationsUI\Http\Resources\ContributorResource;
+use RepositorioMaster\TranslationsUI\Http\Resources\InviteResource;
+use RepositorioMaster\TranslationsUI\Mail\InviteCreated;
+use RepositorioMaster\TranslationsUI\Modal;
+use RepositorioMaster\TranslationsUI\Models\Contributor;
+use RepositorioMaster\TranslationsUI\Models\Invite;
 
 class ContributorController extends BaseController
 {
@@ -39,7 +39,7 @@ class ContributorController extends BaseController
         $connection = config('translations.database_connection');
         $request->validate([
             'role' => 'required|integer',
-            'email' => 'required|email|unique:'.($connection ? $connection.'.' : '').'ltu_contributors,email',
+            'email' => 'required|email|unique:' . ($connection ? $connection . '.' : '') . 'ltu_contributors,email',
         ]);
 
         do {

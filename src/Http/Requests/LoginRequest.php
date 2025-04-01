@@ -1,6 +1,6 @@
 <?php
 
-namespace Outhebox\TranslationsUI\Http\Requests;
+namespace RepositorioMaster\TranslationsUI\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Auth;

@@ -1,12 +1,12 @@
 <?php
 
-namespace Outhebox\TranslationsUI\Models;
+namespace RepositorioMaster\TranslationsUI\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use Outhebox\TranslationsUI\Traits\HasDatabaseConnection;
+use RepositorioMaster\TranslationsUI\Traits\HasDatabaseConnection;
 
 class Translation extends Model
 {

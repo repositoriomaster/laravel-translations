@@ -1,10 +1,10 @@
 <?php
 
-namespace Outhebox\TranslationsUI\Http\Resources;
+namespace RepositorioMaster\TranslationsUI\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Support\Collection;
-use Outhebox\TranslationsUI\Models\Language;
+use RepositorioMaster\TranslationsUI\Models\Language;
 
 /** @mixin Language */
 class LanguageResource extends JsonResource

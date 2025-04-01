@@ -1,10 +1,10 @@
 <?php
 
-namespace Outhebox\TranslationsUI\Actions;
+namespace RepositorioMaster\TranslationsUI\Actions;
 
-use Outhebox\TranslationsUI\Models\Phrase;
-use Outhebox\TranslationsUI\Models\Translation;
-use Outhebox\TranslationsUI\Models\TranslationFile;
+use RepositorioMaster\TranslationsUI\Models\Phrase;
+use RepositorioMaster\TranslationsUI\Models\Translation;
+use RepositorioMaster\TranslationsUI\Models\TranslationFile;
 
 class CopySourceKeyToTranslationsAction
 {

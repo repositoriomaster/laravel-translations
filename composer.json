@@ -1,5 +1,5 @@
 {
-    "name": "outhebox/laravel-translations",
+    "name": "repositoriomaster/laravel-translations",
     "description": "Laravel Translations UI provides a simple way to manage your translations in your Laravel application. It allows you to add, edit, delete and export translations, and it also provides a search functionality to find translations.",
     "keywords": [
         "laravel",
@@ -10,12 +10,12 @@
         "inertia",
         "translation-manager"
     ],
-    "homepage": "https://github.com/MohmmedAshraf/laravel-translations",
+    "homepage": "https://github.com/repositoriomaster/laravel-translations",
     "license": "MIT",
     "authors": [
         {
-            "name": "Mohamed Ashraf",
-            "email": "cupo.ashraf@gmail.com",
+            "name": "Repositorio Master",
+            "email": "no-email@github.com",
             "role": "Developer"
         }
     ],
@@ -38,9 +38,9 @@
     },
     "autoload": {
         "psr-4": {
-            "Outhebox\\TranslationsUI\\": "src",
-            "Outhebox\\TranslationsUI\\Database\\Factories\\": "database/factories",
-            "Outhebox\\TranslationsUI\\Database\\Seeders\\": "database/seeders"
+            "RepositorioMaster\\TranslationsUI\\": "src",
+            "RepositorioMaster\\TranslationsUI\\Database\\Factories\\": "database/factories",
+            "RepositorioMaster\\TranslationsUI\\Database\\Seeders\\": "database/seeders"
         },
         "files": [
             "src/helpers.php"
@@ -48,7 +48,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Outhebox\\TranslationsUI\\Tests\\": "tests"
+            "RepositorioMaster\\TranslationsUI\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -66,10 +66,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Outhebox\\TranslationsUI\\TranslationsUIServiceProvider"
+                "RepositorioMaster\\TranslationsUI\\TranslationsUIServiceProvider"
             ],
             "aliases": {
-                "TranslationsUI": "Outhebox\\TranslationsUI\\Facades\\TranslationsUI"
+                "TranslationsUI": "RepositorioMaster\\TranslationsUI\\Facades\\TranslationsUI"
             }
         }
     },

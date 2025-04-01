@@ -1,8 +1,8 @@
 <?php
 
-use Outhebox\TranslationsUI\Models\Language;
-use Outhebox\TranslationsUI\Models\Phrase;
-use Outhebox\TranslationsUI\Models\Translation;
+use RepositorioMaster\TranslationsUI\Models\Language;
+use RepositorioMaster\TranslationsUI\Models\Phrase;
+use RepositorioMaster\TranslationsUI\Models\Translation;
 
 beforeEach(function () {
     $sourceTranslation = Translation::factory([

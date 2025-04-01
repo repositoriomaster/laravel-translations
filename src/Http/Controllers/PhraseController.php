@@ -1,6 +1,6 @@
 <?php
 
-namespace Outhebox\TranslationsUI\Http\Controllers;
+namespace RepositorioMaster\TranslationsUI\Http\Controllers;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\RedirectResponse;
@@ -8,12 +8,12 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
 use Inertia\Inertia;
 use Inertia\Response;
-use Outhebox\TranslationsUI\Http\Resources\PhraseResource;
-use Outhebox\TranslationsUI\Http\Resources\TranslationFileResource;
-use Outhebox\TranslationsUI\Http\Resources\TranslationResource;
-use Outhebox\TranslationsUI\Models\Phrase;
-use Outhebox\TranslationsUI\Models\Translation;
-use Outhebox\TranslationsUI\Models\TranslationFile;
+use RepositorioMaster\TranslationsUI\Http\Resources\PhraseResource;
+use RepositorioMaster\TranslationsUI\Http\Resources\TranslationFileResource;
+use RepositorioMaster\TranslationsUI\Http\Resources\TranslationResource;
+use RepositorioMaster\TranslationsUI\Models\Phrase;
+use RepositorioMaster\TranslationsUI\Models\Translation;
+use RepositorioMaster\TranslationsUI\Models\TranslationFile;
 use Stichoza\GoogleTranslate\Exceptions\LargeTextException;
 use Stichoza\GoogleTranslate\Exceptions\RateLimitException;
 use Stichoza\GoogleTranslate\Exceptions\TranslationRequestException;
@@ -44,16 +44,16 @@ class PhraseController extends BaseController
         if ($request->has('filter.translationFile')) {
             $phrases->where(
                 ! is_null($request->input('filter.translationFile')) || ! empty($request->input('filter.translationFile'))
-                    ? fn (Builder $query) => $query->where('translation_file_id', $request->input('filter.translationFile'))
-                    : fn (Builder $query) => $query->whereNull('translation_file_id')
+                    ? fn(Builder $query) => $query->where('translation_file_id', $request->input('filter.translationFile'))
+                    : fn(Builder $query) => $query->whereNull('translation_file_id')
             );
         }
 
         if ($request->has('filter.status')) {
             $phrases->where(
                 $request->input('filter.status') === 'translated'
-                    ? fn (Builder $query) => $query->whereNotNull('value')
-                    : fn (Builder $query) => $query->whereNull('value')
+                    ? fn(Builder $query) => $query->whereNotNull('value')
+                    : fn(Builder $query) => $query->whereNull('value')
             );
         }
 

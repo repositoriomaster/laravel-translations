@@ -1,6 +1,6 @@
 <?php
 
-namespace Outhebox\TranslationsUI\Http\Controllers\Auth;
+namespace RepositorioMaster\TranslationsUI\Http\Controllers\Auth;
 
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 use Inertia\Inertia;
 use Inertia\Response;
-use Outhebox\TranslationsUI\Models\Contributor;
+use RepositorioMaster\TranslationsUI\Models\Contributor;
 use Throwable;
 
 class NewPasswordController extends Controller

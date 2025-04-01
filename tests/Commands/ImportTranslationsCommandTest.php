@@ -1,11 +1,11 @@
 <?php
 
-use Outhebox\TranslationsUI\Models\Language;
-use Outhebox\TranslationsUI\Models\Phrase;
-use Outhebox\TranslationsUI\Models\Translation;
+use RepositorioMaster\TranslationsUI\Models\Language;
+use RepositorioMaster\TranslationsUI\Models\Phrase;
+use RepositorioMaster\TranslationsUI\Models\Translation;
 
 beforeEach(function () {
-    App::useLangPath(__DIR__.'lang_test');
+    App::useLangPath(__DIR__ . 'lang_test');
     createDirectoryIfNotExits(lang_path());
 });
 

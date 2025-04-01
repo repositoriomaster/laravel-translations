@@ -1,6 +1,6 @@
 <?php
 
-namespace Outhebox\TranslationsUI\Mail;
+namespace RepositorioMaster\TranslationsUI\Mail;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;

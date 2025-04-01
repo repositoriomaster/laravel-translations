@@ -1,7 +1,7 @@
 <?php
 
-use Outhebox\TranslationsUI\Models\Phrase;
-use Outhebox\TranslationsUI\Models\Translation;
+use RepositorioMaster\TranslationsUI\Models\Phrase;
+use RepositorioMaster\TranslationsUI\Models\Translation;
 
 use function Pest\Faker\fake;
 

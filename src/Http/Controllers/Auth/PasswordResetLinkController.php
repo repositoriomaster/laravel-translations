@@ -1,6 +1,6 @@
 <?php
 
-namespace Outhebox\TranslationsUI\Http\Controllers\Auth;
+namespace RepositorioMaster\TranslationsUI\Http\Controllers\Auth;
 
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -9,8 +9,8 @@ use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
 use Inertia\Inertia;
 use Inertia\Response;
-use Outhebox\TranslationsUI\Mail\ResetPassword;
-use Outhebox\TranslationsUI\Models\Contributor;
+use RepositorioMaster\TranslationsUI\Mail\ResetPassword;
+use RepositorioMaster\TranslationsUI\Models\Contributor;
 
 class PasswordResetLinkController extends Controller
 {
@@ -23,7 +23,7 @@ class PasswordResetLinkController extends Controller
     {
         $connection = config('translations.database_connection');
         $request->validate([
-            'email' => 'required|email|exists:'.($connection ? $connection.'.' : '').'ltu_contributors,email',
+            'email' => 'required|email|exists:' . ($connection ? $connection . '.' : '') . 'ltu_contributors,email',
         ]);
 
         $token = Str::random();

@@ -1,6 +1,6 @@
 <?php
 
-namespace Outhebox\TranslationsUI\Traits;
+namespace RepositorioMaster\TranslationsUI\Traits;
 
 trait HasDatabaseConnection
 {

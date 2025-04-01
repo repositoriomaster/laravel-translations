@@ -1,10 +1,10 @@
 <?php
 
-namespace Outhebox\TranslationsUI\Database\Factories;
+namespace RepositorioMaster\TranslationsUI\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Outhebox\TranslationsUI\Enums\RoleEnum;
-use Outhebox\TranslationsUI\Models\Invite;
+use RepositorioMaster\TranslationsUI\Enums\RoleEnum;
+use RepositorioMaster\TranslationsUI\Models\Invite;
 
 class InviteFactory extends Factory
 {

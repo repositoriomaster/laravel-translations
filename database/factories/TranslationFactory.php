@@ -1,10 +1,10 @@
 <?php
 
-namespace Outhebox\TranslationsUI\Database\Factories;
+namespace RepositorioMaster\TranslationsUI\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Outhebox\TranslationsUI\Models\Language;
-use Outhebox\TranslationsUI\Models\Translation;
+use RepositorioMaster\TranslationsUI\Models\Language;
+use RepositorioMaster\TranslationsUI\Models\Translation;
 
 class TranslationFactory extends Factory
 {

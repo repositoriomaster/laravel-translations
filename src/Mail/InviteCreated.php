@@ -1,11 +1,11 @@
 <?php
 
-namespace Outhebox\TranslationsUI\Mail;
+namespace RepositorioMaster\TranslationsUI\Mail;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
-use Outhebox\TranslationsUI\Models\Invite;
+use RepositorioMaster\TranslationsUI\Models\Invite;
 
 class InviteCreated extends Mailable
 {

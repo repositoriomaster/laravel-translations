@@ -1,13 +1,13 @@
 <?php
 
-namespace Outhebox\TranslationsUI\Models;
+namespace RepositorioMaster\TranslationsUI\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Collection;
-use Outhebox\TranslationsUI\Traits\HasDatabaseConnection;
-use Outhebox\TranslationsUI\Traits\HasUuid;
+use RepositorioMaster\TranslationsUI\Traits\HasDatabaseConnection;
+use RepositorioMaster\TranslationsUI\Traits\HasUuid;
 
 class Phrase extends Model
 {
@@ -24,7 +24,8 @@ class Phrase extends Model
     ];
 
     protected $with = [
-        'source', 'file',
+        'source',
+        'file',
     ];
 
     public function file(): BelongsTo

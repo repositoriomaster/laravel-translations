@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Outhebox\TranslationsUI;
+namespace RepositorioMaster\TranslationsUI;
 
 use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Contracts\Support\Responsable;
@@ -78,8 +78,8 @@ class Modal implements Responsable
         $request->headers->replace($originalRequest->headers->all());
 
         $request->setJson($originalRequest->json())
-            ->setUserResolver(fn () => $originalRequest->getUserResolver())
-            ->setRouteResolver(fn () => $baseRoute)
+            ->setUserResolver(fn() => $originalRequest->getUserResolver())
+            ->setRouteResolver(fn() => $baseRoute)
             ->setLaravelSession($originalRequest->session());
 
         app()->instance('request', $request);
@@ -96,7 +96,7 @@ class Modal implements Responsable
 
         return $middleware->handle(
             $request,
-            fn () => $route->run()
+            fn() => $route->run()
         );
     }
 

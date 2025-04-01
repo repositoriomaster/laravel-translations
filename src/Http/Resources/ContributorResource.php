@@ -1,10 +1,10 @@
 <?php
 
-namespace Outhebox\TranslationsUI\Http\Resources;
+namespace RepositorioMaster\TranslationsUI\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Support\Collection;
-use Outhebox\TranslationsUI\Models\Contributor;
+use RepositorioMaster\TranslationsUI\Models\Contributor;
 
 /** @mixin Contributor */
 class ContributorResource extends JsonResource

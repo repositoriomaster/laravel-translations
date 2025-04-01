@@ -1,6 +1,6 @@
 <?php
 
-namespace Outhebox\TranslationsUI\Http\Controllers;
+namespace RepositorioMaster\TranslationsUI\Http\Controllers;
 
 use Exception;
 use Illuminate\Http\RedirectResponse;
@@ -8,13 +8,13 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
 use Inertia\Inertia;
 use Inertia\Response;
-use Outhebox\TranslationsUI\Actions\CreateTranslationForLanguageAction;
-use Outhebox\TranslationsUI\Http\Resources\LanguageResource;
-use Outhebox\TranslationsUI\Http\Resources\TranslationResource;
-use Outhebox\TranslationsUI\Modal;
-use Outhebox\TranslationsUI\Models\Language;
-use Outhebox\TranslationsUI\Models\Translation;
-use Outhebox\TranslationsUI\TranslationsManager;
+use RepositorioMaster\TranslationsUI\Actions\CreateTranslationForLanguageAction;
+use RepositorioMaster\TranslationsUI\Http\Resources\LanguageResource;
+use RepositorioMaster\TranslationsUI\Http\Resources\TranslationResource;
+use RepositorioMaster\TranslationsUI\Modal;
+use RepositorioMaster\TranslationsUI\Models\Language;
+use RepositorioMaster\TranslationsUI\Models\Translation;
+use RepositorioMaster\TranslationsUI\TranslationsManager;
 
 class TranslationController extends BaseController
 {
@@ -98,7 +98,6 @@ class TranslationController extends BaseController
             'type' => 'success',
             'body' => 'Translations have been added successfully',
         ]);
-
     }
 
     public function destroy(Translation $translation): RedirectResponse

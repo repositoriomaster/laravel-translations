@@ -1,18 +1,18 @@
 <?php
 
-namespace Outhebox\TranslationsUI;
+namespace RepositorioMaster\TranslationsUI;
 
 use Illuminate\Contracts\Debug\ExceptionHandler;
 use Illuminate\Contracts\Support\Arrayable;
 use Inertia\Response;
 use Inertia\ResponseFactory;
-use Outhebox\TranslationsUI\Console\Commands\CleanOldVersionCommand;
-use Outhebox\TranslationsUI\Console\Commands\ContributorCommand;
-use Outhebox\TranslationsUI\Console\Commands\ExportTranslationsCommand;
-use Outhebox\TranslationsUI\Console\Commands\ImportTranslationsCommand;
-use Outhebox\TranslationsUI\Console\Commands\PublishCommand;
-use Outhebox\TranslationsUI\Exceptions\TranslationsUIExceptionHandler;
-use Outhebox\TranslationsUI\Models\Contributor;
+use RepositorioMaster\TranslationsUI\Console\Commands\CleanOldVersionCommand;
+use RepositorioMaster\TranslationsUI\Console\Commands\ContributorCommand;
+use RepositorioMaster\TranslationsUI\Console\Commands\ExportTranslationsCommand;
+use RepositorioMaster\TranslationsUI\Console\Commands\ImportTranslationsCommand;
+use RepositorioMaster\TranslationsUI\Console\Commands\PublishCommand;
+use RepositorioMaster\TranslationsUI\Exceptions\TranslationsUIExceptionHandler;
+use RepositorioMaster\TranslationsUI\Models\Contributor;
 use Spatie\LaravelPackageTools\Commands\InstallCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
@@ -47,8 +47,8 @@ class TranslationsUIServiceProvider extends PackageServiceProvider
                     ->startWith(function (InstallCommand $command) {
                         $this->writeSeparationLine($command);
                         $command->line('Laravel Translations UI installation, Simple and friendly user interface for managing translations in a Laravel app.');
-                        $command->line('Laravel version: '.app()->version());
-                        $command->line('PHP version: '.trim(phpversion()));
+                        $command->line('Laravel version: ' . app()->version());
+                        $command->line('PHP version: ' . trim(phpversion()));
                         $command->line(' ');
                         $command->line('Github: https://github.com/MohmmedAshraf/laravel-translations');
                         $this->writeSeparationLine($command);

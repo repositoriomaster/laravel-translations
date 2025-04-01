@@ -1,9 +1,9 @@
 <?php
 
-namespace Outhebox\TranslationsUI\Console\Commands;
+namespace RepositorioMaster\TranslationsUI\Console\Commands;
 
 use Illuminate\Console\Command;
-use Outhebox\TranslationsUI\TranslationsManager;
+use RepositorioMaster\TranslationsUI\TranslationsManager;
 
 class ExportTranslationsCommand extends Command
 {
@@ -22,10 +22,10 @@ class ExportTranslationsCommand extends Command
 
     public function handle(): void
     {
-        $this->info('Exporting translations...'.PHP_EOL);
+        $this->info('Exporting translations...' . PHP_EOL);
 
         $this->manager->export();
 
-        $this->info('Translations exported successfully!'.PHP_EOL);
+        $this->info('Translations exported successfully!' . PHP_EOL);
     }
 }

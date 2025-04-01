@@ -1,12 +1,12 @@
 <?php
 
-namespace Outhebox\TranslationsUI\Http\Middleware;
+namespace RepositorioMaster\TranslationsUI\Http\Middleware;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Inertia\Middleware;
-use Outhebox\TranslationsUI\Http\Resources\ContributorResource;
-use Outhebox\TranslationsUI\Models\Contributor;
+use RepositorioMaster\TranslationsUI\Http\Resources\ContributorResource;
+use RepositorioMaster\TranslationsUI\Models\Contributor;
 use Tighten\Ziggy\Ziggy;
 
 class HandleInertiaRequests extends Middleware
@@ -31,8 +31,8 @@ class HandleInertiaRequests extends Middleware
                     'location' => $request->url(),
                 ]);
             },
-            'notification' => fn () => $request->session()->get('notification'),
-            'status' => fn () => $request->session()->get('status'),
+            'notification' => fn() => $request->session()->get('notification'),
+            'status' => fn() => $request->session()->get('status'),
         ]);
     }
 

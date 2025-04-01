@@ -1,6 +1,6 @@
 <?php
 
-namespace Outhebox\TranslationsUI\Http\Controllers;
+namespace RepositorioMaster\TranslationsUI\Http\Controllers;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\RedirectResponse;
@@ -8,14 +8,14 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
 use Inertia\Inertia;
 use Inertia\Response;
-use Outhebox\TranslationsUI\Actions\CreateSourceKeyAction;
-use Outhebox\TranslationsUI\Http\Resources\PhraseResource;
-use Outhebox\TranslationsUI\Http\Resources\TranslationFileResource;
-use Outhebox\TranslationsUI\Http\Resources\TranslationResource;
-use Outhebox\TranslationsUI\Modal;
-use Outhebox\TranslationsUI\Models\Phrase;
-use Outhebox\TranslationsUI\Models\Translation;
-use Outhebox\TranslationsUI\Models\TranslationFile;
+use RepositorioMaster\TranslationsUI\Actions\CreateSourceKeyAction;
+use RepositorioMaster\TranslationsUI\Http\Resources\PhraseResource;
+use RepositorioMaster\TranslationsUI\Http\Resources\TranslationFileResource;
+use RepositorioMaster\TranslationsUI\Http\Resources\TranslationResource;
+use RepositorioMaster\TranslationsUI\Modal;
+use RepositorioMaster\TranslationsUI\Models\Phrase;
+use RepositorioMaster\TranslationsUI\Models\Translation;
+use RepositorioMaster\TranslationsUI\Models\TranslationFile;
 
 class SourcePhraseController extends BaseController
 {
@@ -40,8 +40,8 @@ class SourcePhraseController extends BaseController
         if ($request->has('filter.translationFile')) {
             $phrases->where(
                 ! is_null($request->input('filter.translationFile')) || ! empty($request->input('filter.translationFile'))
-                    ? fn (Builder $query) => $query->where('translation_file_id', $request->input('filter.translationFile'))
-                    : fn (Builder $query) => $query->whereNull('translation_file_id')
+                    ? fn(Builder $query) => $query->where('translation_file_id', $request->input('filter.translationFile'))
+                    : fn(Builder $query) => $query->whereNull('translation_file_id')
             );
         }
 
@@ -85,7 +85,7 @@ class SourcePhraseController extends BaseController
 
         $request->validate([
             'key' => $key,
-            'file' => ['required', 'integer', 'exists:'.($connection ? $connection.'.' : '').'ltu_translation_files,id'],
+            'file' => ['required', 'integer', 'exists:' . ($connection ? $connection . '.' : '') . 'ltu_translation_files,id'],
             'content' => ['required', 'string'],
         ]);
 
@@ -127,7 +127,7 @@ class SourcePhraseController extends BaseController
         $request->validate([
             'note' => 'nullable|string',
             'phrase' => 'required|string',
-            'file' => 'required|integer|exists:'.($connection ? $connection.'.' : '').'ltu_translation_files,id',
+            'file' => 'required|integer|exists:' . ($connection ? $connection . '.' : '') . 'ltu_translation_files,id',
         ]);
 
         $phrase->update([

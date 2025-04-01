@@ -1,9 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Mail;
-use Outhebox\TranslationsUI\Enums\RoleEnum;
-use Outhebox\TranslationsUI\Mail\InviteCreated;
-use Outhebox\TranslationsUI\Models\Invite;
+use RepositorioMaster\TranslationsUI\Enums\RoleEnum;
+use RepositorioMaster\TranslationsUI\Mail\InviteCreated;
+use RepositorioMaster\TranslationsUI\Models\Invite;
 
 it('it can render the contributor page', function () {
     $this->actingAs($this->owner, 'translations')->get(route('ltu.contributors.index'))
@@ -18,7 +18,7 @@ test('owner can invite a contributor', function () {
         'role' => RoleEnum::owner->value,
     ]);
 
-    $response->assertRedirect(route('ltu.contributors.index').'#invited')
+    $response->assertRedirect(route('ltu.contributors.index') . '#invited')
         ->assertSessionHas('notification', [
             'type' => 'success',
             'body' => 'Invite sent successfully',

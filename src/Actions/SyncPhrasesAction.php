@@ -1,10 +1,10 @@
 <?php
 
-namespace Outhebox\TranslationsUI\Actions;
+namespace RepositorioMaster\TranslationsUI\Actions;
 
-use Outhebox\TranslationsUI\Models\Language;
-use Outhebox\TranslationsUI\Models\Translation;
-use Outhebox\TranslationsUI\Models\TranslationFile;
+use RepositorioMaster\TranslationsUI\Models\Language;
+use RepositorioMaster\TranslationsUI\Models\Translation;
+use RepositorioMaster\TranslationsUI\Models\TranslationFile;
 
 class SyncPhrasesAction
 {
@@ -25,9 +25,9 @@ class SyncPhrasesAction
             'source' => config('translations.source_language') === $locale,
         ]);
 
-        $isRoot = $file === $locale.'.json' || $file === $locale.'.php';
+        $isRoot = $file === $locale . '.json' || $file === $locale . '.php';
         $extension = pathinfo($file, PATHINFO_EXTENSION);
-        $filePath = str_replace('.'.$extension, '', preg_replace('/^'.preg_quote($locale.DIRECTORY_SEPARATOR, '/').'/', '', $file));
+        $filePath = str_replace('.' . $extension, '', preg_replace('/^' . preg_quote($locale . DIRECTORY_SEPARATOR, '/') . '/', '', $file));
 
         $translationFile = TranslationFile::firstOrCreate([
             'name' => $filePath,

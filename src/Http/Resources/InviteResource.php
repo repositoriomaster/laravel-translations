@@ -1,11 +1,11 @@
 <?php
 
-namespace Outhebox\TranslationsUI\Http\Resources;
+namespace RepositorioMaster\TranslationsUI\Http\Resources;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Support\Collection;
-use Outhebox\TranslationsUI\Models\Invite;
+use RepositorioMaster\TranslationsUI\Models\Invite;
 
 /** @mixin Invite */
 class InviteResource extends JsonResource

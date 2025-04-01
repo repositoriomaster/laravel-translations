@@ -1,14 +1,14 @@
 <?php
 
-namespace Outhebox\TranslationsUI\Http\Controllers\Auth;
+namespace RepositorioMaster\TranslationsUI\Http\Controllers\Auth;
 
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\Hash;
 use Inertia\Inertia;
-use Outhebox\TranslationsUI\Models\Contributor;
-use Outhebox\TranslationsUI\Models\Invite;
+use RepositorioMaster\TranslationsUI\Models\Contributor;
+use RepositorioMaster\TranslationsUI\Models\Invite;
 
 class InvitationAcceptController extends BaseController
 {

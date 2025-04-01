@@ -1,19 +1,19 @@
 <?php
 
-namespace Outhebox\TranslationsUI\Console\Commands;
+namespace RepositorioMaster\TranslationsUI\Console\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Database\Schema\Builder as SchemaBuilder;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Str;
-use Outhebox\TranslationsUI\Actions\SyncPhrasesAction;
-use Outhebox\TranslationsUI\Database\Seeders\LanguagesTableSeeder;
-use Outhebox\TranslationsUI\Models\Language;
-use Outhebox\TranslationsUI\Models\Phrase;
-use Outhebox\TranslationsUI\Models\Translation;
-use Outhebox\TranslationsUI\Models\TranslationFile;
-use Outhebox\TranslationsUI\TranslationsManager;
+use RepositorioMaster\TranslationsUI\Actions\SyncPhrasesAction;
+use RepositorioMaster\TranslationsUI\Database\Seeders\LanguagesTableSeeder;
+use RepositorioMaster\TranslationsUI\Models\Language;
+use RepositorioMaster\TranslationsUI\Models\Phrase;
+use RepositorioMaster\TranslationsUI\Models\Translation;
+use RepositorioMaster\TranslationsUI\Models\TranslationFile;
+use RepositorioMaster\TranslationsUI\TranslationsManager;
 
 class ImportTranslationsCommand extends Command
 {

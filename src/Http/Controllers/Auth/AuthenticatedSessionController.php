@@ -1,13 +1,13 @@
 <?php
 
-namespace Outhebox\TranslationsUI\Http\Controllers\Auth;
+namespace RepositorioMaster\TranslationsUI\Http\Controllers\Auth;
 
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
-use Outhebox\TranslationsUI\Http\Requests\LoginRequest;
+use RepositorioMaster\TranslationsUI\Http\Requests\LoginRequest;
 
 class AuthenticatedSessionController extends Controller
 {

@@ -1,9 +1,9 @@
 <?php
 
-use Outhebox\TranslationsUI\Actions\SyncPhrasesAction;
-use Outhebox\TranslationsUI\Models\Language;
-use Outhebox\TranslationsUI\Models\Phrase;
-use Outhebox\TranslationsUI\Models\Translation;
+use RepositorioMaster\TranslationsUI\Actions\SyncPhrasesAction;
+use RepositorioMaster\TranslationsUI\Models\Language;
+use RepositorioMaster\TranslationsUI\Models\Phrase;
+use RepositorioMaster\TranslationsUI\Models\Translation;
 
 it('can sync phrases with same keys in different groups', function () {
     // Setup

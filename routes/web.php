@@ -1,18 +1,18 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Outhebox\TranslationsUI\Http\Controllers\Auth\AuthenticatedSessionController;
-use Outhebox\TranslationsUI\Http\Controllers\Auth\InvitationAcceptController;
-use Outhebox\TranslationsUI\Http\Controllers\Auth\NewPasswordController;
-use Outhebox\TranslationsUI\Http\Controllers\Auth\PasswordResetLinkController;
-use Outhebox\TranslationsUI\Http\Controllers\ContributorController;
-use Outhebox\TranslationsUI\Http\Controllers\PhraseController;
-use Outhebox\TranslationsUI\Http\Controllers\ProfileController;
-use Outhebox\TranslationsUI\Http\Controllers\SourcePhraseController;
-use Outhebox\TranslationsUI\Http\Controllers\TranslationController;
-use Outhebox\TranslationsUI\Http\Middleware\Authenticate;
-use Outhebox\TranslationsUI\Http\Middleware\HandleInertiaRequests;
-use Outhebox\TranslationsUI\Http\Middleware\RedirectIfNotOwner;
+use RepositorioMaster\TranslationsUI\Http\Controllers\Auth\AuthenticatedSessionController;
+use RepositorioMaster\TranslationsUI\Http\Controllers\Auth\InvitationAcceptController;
+use RepositorioMaster\TranslationsUI\Http\Controllers\Auth\NewPasswordController;
+use RepositorioMaster\TranslationsUI\Http\Controllers\Auth\PasswordResetLinkController;
+use RepositorioMaster\TranslationsUI\Http\Controllers\ContributorController;
+use RepositorioMaster\TranslationsUI\Http\Controllers\PhraseController;
+use RepositorioMaster\TranslationsUI\Http\Controllers\ProfileController;
+use RepositorioMaster\TranslationsUI\Http\Controllers\SourcePhraseController;
+use RepositorioMaster\TranslationsUI\Http\Controllers\TranslationController;
+use RepositorioMaster\TranslationsUI\Http\Middleware\Authenticate;
+use RepositorioMaster\TranslationsUI\Http\Middleware\HandleInertiaRequests;
+use RepositorioMaster\TranslationsUI\Http\Middleware\RedirectIfNotOwner;
 
 Route::domain(config('translations.domain'))->group(function () {
     Route::middleware(array_merge(config('translations.middleware'), [HandleInertiaRequests::class]))->prefix(config('translations.path'))->name('ltu.')->group(function () {

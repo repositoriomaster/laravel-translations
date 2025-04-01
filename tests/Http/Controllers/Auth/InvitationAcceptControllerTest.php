@@ -1,8 +1,8 @@
 <?php
 
-use Outhebox\TranslationsUI\Enums\RoleEnum;
-use Outhebox\TranslationsUI\Models\Contributor;
-use Outhebox\TranslationsUI\Models\Invite;
+use RepositorioMaster\TranslationsUI\Enums\RoleEnum;
+use RepositorioMaster\TranslationsUI\Models\Contributor;
+use RepositorioMaster\TranslationsUI\Models\Invite;
 
 test('invitation accept page can be rendered', function () {
     $invite = Invite::factory()->create();

@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use Outhebox\TranslationsUI\Enums\RoleEnum;
+use RepositorioMaster\TranslationsUI\Enums\RoleEnum;
 
 return new class extends Migration
 {

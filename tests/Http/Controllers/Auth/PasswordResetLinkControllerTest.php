@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Validation\ValidationException;
-use Outhebox\TranslationsUI\Mail\ResetPassword;
+use RepositorioMaster\TranslationsUI\Mail\ResetPassword;
 
 test('forgot password link screen can be rendered', function () {
     $this->get(route('ltu.password.request'))

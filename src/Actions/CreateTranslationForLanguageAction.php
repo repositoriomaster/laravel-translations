@@ -1,9 +1,9 @@
 <?php
 
-namespace Outhebox\TranslationsUI\Actions;
+namespace RepositorioMaster\TranslationsUI\Actions;
 
-use Outhebox\TranslationsUI\Models\Language;
-use Outhebox\TranslationsUI\Models\Translation;
+use RepositorioMaster\TranslationsUI\Models\Language;
+use RepositorioMaster\TranslationsUI\Models\Translation;
 
 class CreateTranslationForLanguageAction
 {

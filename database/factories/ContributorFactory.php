@@ -1,9 +1,9 @@
 <?php
 
-namespace Outhebox\TranslationsUI\Database\Factories;
+namespace RepositorioMaster\TranslationsUI\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Outhebox\TranslationsUI\Models\Contributor;
+use RepositorioMaster\TranslationsUI\Models\Contributor;
 
 class ContributorFactory extends Factory
 {

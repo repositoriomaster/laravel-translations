@@ -1,6 +1,6 @@
 <?php
 
-namespace Outhebox\TranslationsUI\Http\Controllers;
+namespace RepositorioMaster\TranslationsUI\Http\Controllers;
 
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -24,7 +24,7 @@ class ProfileController extends BaseController
         $connection = config('translations.database_connection');
         $request->validate([
             'name' => ['required', 'max:255'],
-            'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.($connection ? $connection.'.' : '').'ltu_contributors,email,'.$request->user()->id],
+            'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:' . ($connection ? $connection . '.' : '') . 'ltu_contributors,email,' . $request->user()->id],
         ]);
 
         $request->user()->update($request->only('name', 'email'));

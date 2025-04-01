@@ -1,12 +1,12 @@
 <?php
 
-namespace Outhebox\TranslationsUI\Models;
+namespace RepositorioMaster\TranslationsUI\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use Outhebox\TranslationsUI\Enums\RoleEnum;
-use Outhebox\TranslationsUI\Traits\HasDatabaseConnection;
+use RepositorioMaster\TranslationsUI\Enums\RoleEnum;
+use RepositorioMaster\TranslationsUI\Traits\HasDatabaseConnection;
 
 class Contributor extends Authenticatable
 {

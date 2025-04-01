@@ -1,9 +1,9 @@
 <?php
 
-namespace Outhebox\TranslationsUI\Database\Seeders;
+namespace RepositorioMaster\TranslationsUI\Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use Outhebox\TranslationsUI\Models\Language;
+use RepositorioMaster\TranslationsUI\Models\Language;
 
 class LanguagesTableSeeder extends Seeder
 {
@@ -543,7 +543,7 @@ class LanguagesTableSeeder extends Seeder
         ];
 
         collect($languages)->each(
-            fn ($language) => Language::create($language)
+            fn($language) => Language::create($language)
         );
     }
 }

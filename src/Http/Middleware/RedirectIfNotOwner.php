@@ -1,6 +1,6 @@
 <?php
 
-namespace Outhebox\TranslationsUI\Http\Middleware;
+namespace RepositorioMaster\TranslationsUI\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;

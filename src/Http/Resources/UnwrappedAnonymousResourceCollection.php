@@ -1,6 +1,6 @@
 <?php
 
-namespace Outhebox\TranslationsUI\Http\Resources;
+namespace RepositorioMaster\TranslationsUI\Http\Resources;
 
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 

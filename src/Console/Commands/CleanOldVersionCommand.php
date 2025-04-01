@@ -1,6 +1,6 @@
 <?php
 
-namespace Outhebox\TranslationsUI\Console\Commands;
+namespace RepositorioMaster\TranslationsUI\Console\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\DB;
@@ -50,9 +50,9 @@ class CleanOldVersionCommand extends Command
 
         $appConfig = file_get_contents(config_path('app.php'));
 
-        if (Str::contains($appConfig, $namespace.'\\Providers\\TranslationsServiceProvider::class')) {
+        if (Str::contains($appConfig, $namespace . '\\Providers\\TranslationsServiceProvider::class')) {
             file_put_contents(config_path('app.php'), str_replace(
-                "$namespace\\Providers\\TranslationsServiceProvider::class,".PHP_EOL,
+                "$namespace\\Providers\\TranslationsServiceProvider::class," . PHP_EOL,
                 '',
                 $appConfig
             ));

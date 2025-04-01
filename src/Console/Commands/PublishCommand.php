@@ -1,6 +1,6 @@
 <?php
 
-namespace Outhebox\TranslationsUI\Console\Commands;
+namespace RepositorioMaster\TranslationsUI\Console\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\File;
@@ -24,8 +24,8 @@ class PublishCommand extends Command
         }
 
         File::deleteDirectory(public_path('vendor/translations-ui'));
-        File::copyDirectory(__DIR__.'/../../../resources/dist/vendor', public_path('vendor'));
-        File::copy(__DIR__.'/../../../resources/favicon.ico', public_path('vendor/translations-ui/favicon.ico'));
+        File::copyDirectory(__DIR__ . '/../../../resources/dist/vendor', public_path('vendor'));
+        File::copy(__DIR__ . '/../../../resources/favicon.ico', public_path('vendor/translations-ui/favicon.ico'));
 
         $this->info('Assets was published to [public/vendor/translations-ui]');
 

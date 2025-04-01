@@ -1,6 +1,6 @@
 <?php
 
-namespace Outhebox\TranslationsUI\Enums;
+namespace RepositorioMaster\TranslationsUI\Enums;
 
 enum StatusEnum: string
 {
