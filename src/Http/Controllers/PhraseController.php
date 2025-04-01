@@ -81,6 +81,13 @@ class PhraseController extends BaseController
             return redirect()->route('ltu.source_translation.edit', $phrase->uuid);
         }
 
+        //Fix Import null source
+        if ($phrase->phrase_id === null) {
+            $phrase->phrase_id = Phrase::where('group', 'en')->where('key', $phrase->key)->first()->id;
+            $phrase->save();
+            $phrase->refresh();
+        }
+
         return Inertia::render('phrases/edit', [
             'phrase' => PhraseResource::make($phrase),
             'translation' => TranslationResource::make($translation),
